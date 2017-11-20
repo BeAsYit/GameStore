@@ -16,6 +16,35 @@ public class ComputerGame {
         this.engine = engine;
     }
 
+    public ComputerGame(){
+        this.serialNumber = counter++;
+    }
+
+
+    public ComputerGame setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public ComputerGame setYear(int year) {
+        this.year = year;
+        return this;
+    }
+
+    public ComputerGame setGenre(Genre genre) {
+        this.genre = genre;
+        return this;
+    }
+
+    public ComputerGame setEngine(Engine engine) {
+        this.engine = engine;
+        return this;
+    }
+    public ComputerGame setPrice(int price) {
+        this.price = price;
+        return this;
+    }
+
 
     public int getSerialNumber() {
         return serialNumber;
@@ -23,10 +52,6 @@ public class ComputerGame {
 
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getName() {
