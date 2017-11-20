@@ -11,7 +11,8 @@ public class Inventory {
     }
 
     public void addGame(double price, String name,int year, Genre genre, Engine engine){
-        ComputerGame game = new ComputerGame(price, name, year, genre, engine);
+        GameProperties props = new GameProperties(price, name, year, genre, engine);
+        ComputerGame game = new ComputerGame(props);
         games.add(game);
     }
 
@@ -26,13 +27,13 @@ public class Inventory {
         return null;
     }
 
-    public List search(ComputerGame searchGame){
+    public List search(GameProperties searchGame){
         List<ComputerGame> matchingGames = new LinkedList<ComputerGame>();
         for (ComputerGame game:games) {
-            if(!game.getName().toLowerCase().equals(searchGame.getName().toLowerCase())){
+            if(!game.getProp().getName().toLowerCase().equals(searchGame.getName().toLowerCase())){
                 continue;
             }
-            if (game.getYear() != searchGame.getYear()){
+            if (game.getProp().getYear() != searchGame.getYear()){
                 continue;
             }
             matchingGames.add(game);

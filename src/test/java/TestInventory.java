@@ -4,7 +4,7 @@ import org.junit.Assert;
 
 public class TestInventory extends TestCase {
 
-    public void testaddGame(){
+    public void testAddGame(){
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         Assert.assertTrue(inventory.games.size() == 1);
@@ -13,26 +13,21 @@ public class TestInventory extends TestCase {
 
     }
 
-    public void testgetGame(){
+    public void testGetGame(){
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         inventory.addGame(50, "Just Nerds",2009, Genre.SHOOTER, Engine.UNREALENGINE);
-        System.out.println(inventory.getGame(2));
-        System.out.println(inventory.getGame(3));
-        for (ComputerGame ggg:inventory.games) {
-            System.out.println(ggg.getSerialNumber());
-        }
-        Assert.assertTrue(inventory.getGame(2) != null);
-        Assert.assertTrue(inventory.getGame(3) == null);
+        Assert.assertTrue(inventory.getGame(4) != null);
+        Assert.assertTrue(inventory.getGame(5) == null);
     }
 
-    public void testsearch(){
+    public void testSearch(){
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         inventory.addGame(50, "Just Nerds",2009, Genre.SHOOTER, Engine.UNREALENGINE);
-        ComputerGame searchGame = new ComputerGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
+        GameProperties searchGame = new GameProperties(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         Assert.assertFalse(inventory.search(searchGame).isEmpty());
-        searchGame = new ComputerGame(50, "Just Something", 2009, Genre.SHOOTER, Engine.UNREALENGINE);
+        searchGame = new GameProperties(50, "Just Something", 2009, Genre.SHOOTER, Engine.UNREALENGINE);
         Assert.assertTrue(inventory.search(searchGame).isEmpty());
 
     }
