@@ -1,3 +1,5 @@
+package shop.game;
+
 public class GameProperties {
     private String name;
     private int year;

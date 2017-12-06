@@ -1,10 +1,13 @@
-import junit.framework.TestCase;
+package shop.game;
+
 import org.junit.Assert;
+import org.junit.Test;
 
 
-public class TestInventory extends TestCase {
+public class TestInventory {
 
-    public void testAddGame(){
+    @Test
+    public void testAddGame() throws Exception{
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         Assert.assertTrue(inventory.games.size() == 1);
@@ -12,16 +15,16 @@ public class TestInventory extends TestCase {
         Assert.assertTrue(inventory.games.size() == 2);
 
     }
-
-    public void testGetGame(){
+    @Test
+    public void testGetGame()throws Exception{
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         inventory.addGame(50, "Just Nerds",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         Assert.assertTrue(inventory.getGame(4) != null);
         Assert.assertTrue(inventory.getGame(5) == null);
     }
-
-    public void testSearch(){
+    @Test
+    public void testSearch()throws Exception{
         Inventory inventory = new Inventory();
         inventory.addGame(50, "Just Cause",2009, Genre.SHOOTER, Engine.UNREALENGINE);
         inventory.addGame(50, "Just Nerds",2009, Genre.SHOOTER, Engine.UNREALENGINE);

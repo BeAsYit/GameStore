@@ -1,3 +1,5 @@
+package shop.game;
+
 public enum Genre {
     SHOOTER, STRATEGY;
 

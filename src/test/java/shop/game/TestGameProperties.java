@@ -1,10 +1,11 @@
+package shop.game;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class TestGameProperties {
-    GameProperties tests = new GameProperties(50,"Test Game",2017,Genre.STRATEGY, Engine.UNITY);
+    GameProperties tests = new GameProperties(50,"Test Game",2017, Genre.STRATEGY, Engine.UNITY);
 
     @Test
     public void getName() throws Exception {

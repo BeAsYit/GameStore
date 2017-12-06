@@ -1,3 +1,5 @@
+package shop.game;
+
 public class ComputerGame {
     private int serialNumber;
     private GameProperties prop;
