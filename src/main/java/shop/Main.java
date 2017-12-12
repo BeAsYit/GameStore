@@ -6,6 +6,8 @@ package shop;
         import shop.delivery.DeliveryNovaPoshta;
         import shop.game.*;
         import shop.payment.Privat24Payment;
+        import shop.users.Customer;
+        import shop.users.Seller;
 
 
 public class Main {
@@ -24,6 +26,14 @@ public class Main {
         cart.setPaymentStrategy(new Privat24Payment());
         Cart cartDecorator = new DiscountDecorator(new BonusDecorator(new CartDecorator(cart)), 20);
         cartDecorator.ship();
+
+        Observable observable = new Observable();
+        Customer Dan = new Customer("Dan", 225);
+        observable.addObserver(Dan);
+        observable.removeObserver(Dan);
+        Seller Bob = new Seller("Dan", 227);
+        observable.addObserver(Bob);
+        observable.notifyObservers();
     }
 
     private static void initializeInventory(Inventory inventory) {

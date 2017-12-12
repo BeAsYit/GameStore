@@ -6,7 +6,7 @@ import shop.payment.PaymentStrategy;
 
 import java.util.ArrayList;
 
-public class Cart {
+public class Cart extends Observable {
     public ArrayList<ComputerGame> games = new ArrayList<>();
     public DeliveryStrategy deliveryStrategy;
     public PaymentStrategy paymentStrategy;
@@ -58,4 +58,6 @@ public class Cart {
         }
         return this.price;
     }
+
+
 }
